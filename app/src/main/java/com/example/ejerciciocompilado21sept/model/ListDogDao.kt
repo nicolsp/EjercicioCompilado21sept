@@ -14,7 +14,7 @@ interface ListDogDao {
     @Query("SELECT*FROM listdog_table")
     fun getAllListDogFromDB(): LiveData<List<ListDog>>
 
-    @Query("SELECT*FROM listdog_table WHERE id =:mId")
+    @Query("SELECT * FROM listdog_table WHERE id =: id")
     fun getListDogByID(mId: String): LiveData<ListDog>
 
 }

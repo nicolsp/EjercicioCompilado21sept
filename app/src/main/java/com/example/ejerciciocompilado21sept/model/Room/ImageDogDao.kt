@@ -13,10 +13,10 @@ interface ImageDogDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAllImageDao(mImageDogDao: List<ImageDog>)
 
-    @Query("SELECT * FROM listImage_table")
+    @Query("SELECT * FROM Images_table")
     fun getAllImageDogFromDB(): LiveData<List<ImageDog>>
 
-    @Query("SELECT * FROM listImage_table WHERE id1 =: id")
+    @Query("SELECT * FROM Images_table WHERE imageUrl =:id")
     fun getImageDogByID(id: String): LiveData<ImageDog>
 
 

@@ -1,4 +1,4 @@
-package com.example.ejerciciocompilado21sept.model
+package com.example.ejerciciocompilado21sept.model.ViewModel
 
 import android.util.Log
 import androidx.lifecycle.LiveData

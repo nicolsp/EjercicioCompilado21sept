@@ -1,4 +1,4 @@
-package com.example.ejerciciocompilado21sept.model
+package com.example.ejerciciocompilado21sept.model.Room
 
 import android.content.Context
 import androidx.room.Database
@@ -15,7 +15,8 @@ abstract class DogDataBase:RoomDatabase() {
         @Volatile
         private var INSTANCE: DogDataBase? = null
         fun getDataBase(context: Context): DogDataBase {
-            val tempInstance = INSTANCE
+            val tempInstance =
+                INSTANCE
             if(tempInstance != null) {
                 return tempInstance
             }

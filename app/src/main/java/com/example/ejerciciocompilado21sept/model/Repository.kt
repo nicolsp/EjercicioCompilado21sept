@@ -2,6 +2,9 @@ package com.example.ejerciciocompilado21sept.model
 
 import android.util.Log
 import androidx.lifecycle.LiveData
+import com.example.ejerciciocompilado21sept.model.Retrofit.RetrofitClient
+import com.example.ejerciciocompilado21sept.model.Room.ListDog
+import com.example.ejerciciocompilado21sept.model.Room.ListDogDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

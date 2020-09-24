@@ -1,11 +1,9 @@
-package com.example.ejerciciocompilado21sept.model
+package com.example.ejerciciocompilado21sept.model.Retrofit
 
 
-import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
-@Entity(tableName = "listdog_table")
-data class ListDog(
 
+data class DataListApi(
     @SerializedName("message")
     val message: List<String>,
     @SerializedName("status")

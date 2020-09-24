@@ -1,6 +1,6 @@
-package com.example.ejerciciocompilado21sept.model
+package com.example.ejerciciocompilado21sept.model.Retrofit
 
-import android.telecom.Call
+import com.example.ejerciciocompilado21sept.model.Room.ListDog
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

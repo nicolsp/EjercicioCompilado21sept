@@ -1,4 +1,4 @@
-package com.example.ejerciciocompilado21sept.model
+package com.example.ejerciciocompilado21sept.model.Room
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

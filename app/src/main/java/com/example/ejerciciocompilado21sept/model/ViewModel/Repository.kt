@@ -23,18 +23,31 @@ class Repository(private val listDogDao: ListDogDao,
 
 
     fun obtainDataInternet() {
-        service.getDataFromApi().enqueue(object : Callback<ListDog>   {
-            override fun onFailure(call: Call<ListDog>, t: Throwable) {
-                TODO("Not yet implemented")
+        service.getDataFromApi().enqueue(object : Callback<DataListApi>   {
+            override fun onFailure(call: Call<DataListApi>, t: Throwable) {
+              Log.e("Repository",t.message.toString())
             }
 
-            override fun onResponse(call: Call<ListDog>, response: Response<ListDog>) {
-                TODO("Not yet implemented")
+            override fun onResponse(call: Call<DataListApi>, response: Response<DataListApi>) {
+                Log.d("REPO", response.body().toString())
+                when(response.code()) {
+                    in 200..299 -> CoroutineScope(Dispatchers.IO).launch { response.body()?.
+                    let{listDogDao.insertAllListDog(converter(it.message))}}
+                    in 300..399 -> Log.d("ERROR 300", response.errorBody().toString() )
+                }
             }
-
 
         })
-
-
     }
+
+
+    fun converter(listadoperros: List<String>) : List<ListDog> {
+        val listdog = mutableListOf<ListDog>( )
+        listadoperros.map {
+            listdog.add(ListDog(it))
+        }
+        return listdog
+    }
+
+
 }

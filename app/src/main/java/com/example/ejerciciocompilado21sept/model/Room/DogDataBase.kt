@@ -7,10 +7,10 @@ import androidx.room.RoomDatabase
 
 private const val DATA_BASE_NAME = "mars_db"
 
-@Database(entities = [ListDog::class], version = 1)
+@Database(entities = [ListDog::class, ImageDog::class], version = 1)
 abstract class DogDataBase:RoomDatabase() {
     abstract fun getListDogDao(): ListDogDao
-
+    abstract fun getImageDogDao(): ImageDogDao
     companion object {
         @Volatile
         private var INSTANCE: DogDataBase? = null

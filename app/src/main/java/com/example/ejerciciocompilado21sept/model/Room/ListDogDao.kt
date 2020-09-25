@@ -10,12 +10,12 @@ import com.example.ejerciciocompilado21sept.model.Retrofit.DataListApi
 @Dao
 interface ListDogDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAllListDog(mListDog: List<DataListApi>)
+    suspend fun insertAllListDog(mListDog: List<ListDog>)
 
     @Query("SELECT*FROM listdog_table")
-    fun getAllListDogFromDB(): LiveData<List<DataListApi>>
+    fun getAllListDogFromDB(): LiveData<List<ListDog>>
 
     @Query("SELECT * FROM listdog_table WHERE listdog =:listdog")
-    fun getListDogByID(listDog: String): LiveData<DataListApi>
+    fun getListDogByID(listdog: String): LiveData<ListDog>
 
 }

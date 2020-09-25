@@ -12,13 +12,13 @@ import com.example.ejerciciocompilado21sept.model.Retrofit.DataImageApi
 interface ImageDogDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAllImageDao(mImageDogDao: List<DataImageApi>)
+    suspend fun insertAllImageDao(mImageDogDao: List<ImageDog>)
 
     @Query("SELECT * FROM Images_table")
-    fun getAllImageDogFromDB(): LiveData<List<DataImageApi>>
+    fun getAllImageDogFromDB(): LiveData<List<ImageDog>>
 
    @Query("SELECT * FROM Images_table WHERE imageUrl =:imageUrl")
-   fun getImageDogByID(imageUrl: String): LiveData<DataImageApi>
+   fun getImageDogByID(imageUrl: String): LiveData<ImageDog>
 
 
 

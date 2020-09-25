@@ -9,10 +9,10 @@ import retrofit2.http.Path
 interface ApiInterface {
 
     @GET("breeds/list")
-    fun getDataFromApi() : retrofit2.Call<ListDog>
+    fun getDataFromApi() : retrofit2.Call<DataListApi>
 
     @GET("breed/{razas}/images")
-    suspend fun getDataFromApiCorutines(@Path("razas") mRazas: String) : Response<List<ListDog>>
+    suspend fun getDataFromApiCorutines(@Path("razas") mRazas: String) : Response<List<DataImageApi>>
 
 
 }

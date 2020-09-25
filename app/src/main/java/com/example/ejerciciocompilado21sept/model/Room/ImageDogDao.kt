@@ -5,19 +5,20 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.ejerciciocompilado21sept.model.Retrofit.DataImageApi
 
 
 @Dao
 interface ImageDogDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAllImageDao(mImageDogDao: List<ImageDog>)
+    suspend fun insertAllImageDao(mImageDogDao: List<DataImageApi>)
 
     @Query("SELECT * FROM Images_table")
-    fun getAllImageDogFromDB(): LiveData<List<ImageDog>>
+    fun getAllImageDogFromDB(): LiveData<List<DataImageApi>>
 
-    @Query("SELECT * FROM Images_table WHERE imageUrl =:id")
-    fun getImageDogByID(id: String): LiveData<ImageDog>
+   @Query("SELECT * FROM Images_table WHERE imageUrl =:imageUrl")
+   fun getImageDogByID(imageUrl: String): LiveData<DataImageApi>
 
 
 

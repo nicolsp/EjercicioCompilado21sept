@@ -15,14 +15,14 @@ class DogViewModel(application: Application): AndroidViewModel(application) {
         val listDogDao = DogDataBase.getDataBase(application).getListDogDao()
         // val ImageDogDao = DogDataBase.getDataBase(application).getIm
         repository = Repository(listDogDao)
-        repository.getDataFromServer()
+        repository.obtainDataInternet()
 
     }
 
     fun exposeLiveDataFromDatabase(): LiveData<List<ListDog>> {
-        return repository.mLiveData
+        return repository.
     }
 
-
+  fun
 
 }

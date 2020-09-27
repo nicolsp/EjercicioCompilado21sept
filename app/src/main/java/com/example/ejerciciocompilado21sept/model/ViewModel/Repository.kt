@@ -39,8 +39,6 @@ class Repository(private val listDogDao: ListDogDao,
 
         })
     }
-
-
     fun converter(listadoperros: List<String>) : List<ListDog> {
         val listdog = mutableListOf<ListDog>( )
         listadoperros.map {
